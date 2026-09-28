@@ -52,7 +52,7 @@ a{color:var(--accent)}
 .topbar nav{display:flex; flex-wrap:wrap; gap:4px}
 .topbar nav a{font-size:13px; font-weight:600; color:var(--muted); text-decoration:none; padding:6px 10px; border-radius:999px}
 .topbar nav a:hover{background:var(--accent-soft); color:var(--accent-ink)}
-.topbar button.mail{font:inherit; font-size:13px; font-weight:700; padding:7px 14px; border-radius:999px; border:1px solid var(--accent); background:var(--accent); color:#fff; cursor:pointer; white-space:nowrap}
+.topbar button.mail{display:inline-flex; align-items:center; gap:6px; font:inherit; font-size:13px; font-weight:700; padding:7px 14px; border-radius:999px; border:1px solid var(--accent); background:var(--accent); color:#fff; cursor:pointer; white-space:nowrap}
 .topbar button.mail:hover{filter:brightness(1.1)}
 @media (max-width:720px){ .topbar nav{display:none} }
 
@@ -84,6 +84,10 @@ header.hero{padding:56px 0 40px}
 .doc ul ul{margin-top:8px}
 .doc ul ul li{padding-left:16px; font-size:.93em; color:var(--muted)}
 .doc ul ul li::before{content:'–'; border:0; width:auto; height:auto; top:0; font-weight:700; color:var(--faint); border-radius:0}
+.ic{width:1em; height:1em; flex:none; vertical-align:-0.14em}
+.ilink{display:inline-flex; align-items:center; gap:5px; font-weight:600; text-decoration:none; white-space:nowrap}
+.plinks{display:flex; flex-wrap:wrap; gap:16px; margin-top:8px; font-size:15px}
+.ilink:hover{text-decoration:underline}
 .stack{margin-top:22px; font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--muted); padding-top:14px; border-top:1px dashed var(--hair)}
 
 .arch{margin-top:14px; background:var(--surface); border:1px solid var(--hair); border-radius:16px; padding:18px; overflow-x:auto}
@@ -106,8 +110,9 @@ footer{padding:56px 0 80px; border-top:1px solid var(--hair)}
 footer h2{font-size:clamp(24px,3.4vw,32px); font-weight:800}
 footer p{margin-top:12px; font-size:15px; line-height:1.7; color:var(--body)}
 .points{list-style:none; padding:0; margin-top:20px; display:grid; gap:10px}
-.points li{font-size:15px; line-height:1.6}
-.btn{display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:15px; text-decoration:none; padding:11px 20px; border-radius:999px; border:1px solid var(--accent); background:var(--accent); color:#fff; cursor:pointer; margin-top:18px}
+.points li{display:flex; align-items:center; gap:8px; font-size:15px; line-height:1.6}
+.points .ic{color:var(--accent)}
+.btn{font-family:inherit; display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:15px; text-decoration:none; padding:11px 20px; border-radius:999px; border:1px solid var(--accent); background:var(--accent); color:#fff; cursor:pointer; margin-top:18px}
 .btn:hover{filter:brightness(1.1)}
 
 .toast{position:fixed; left:50%; bottom:24px; transform:translate(-50%,10px); opacity:0; pointer-events:none; z-index:40;
@@ -133,7 +138,7 @@ footer p{margin-top:12px; font-size:15px; line-height:1.7; color:var(--body)}
     <a href="#gorochi">04 Gorochi</a>
     <a href="#contact">Contact</a>
   </nav>
-  <button type="button" class="mail copy" data-copy="parkjinwoo4500@gmail.com">✉ 메일 복사</button>
+  <button type="button" class="mail copy" data-copy="parkjinwoo4500@gmail.com"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> 메일 복사</button>
 </div></div>
 
 <div class="wrap">
@@ -165,7 +170,8 @@ footer p{margin-top:12px; font-size:15px; line-height:1.7; color:var(--body)}
 <section class="proj" id="triplan">
 <div class="num">Project 02 · Triplan</div>
 <h2>여행 일정 설계 시, 환율·날씨·경보 정보를 사용자가 직접 찾아 종합해야 했던 문제 해결</h2>
-<p class="ptitle">자연어 기반 그룹 여행 플래너 — PM · RAG 파이프라인 설계 · 데이터 파이프라인 · AWS 배포 담당 · <a href="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN15-FINAL-2TEAM" target="_blank" rel="noopener">GitHub</a></p>
+<p class="ptitle">자연어 기반 그룹 여행 플래너 — PM · RAG 파이프라인 설계 · 데이터 파이프라인 · AWS 배포 담당</p>
+<div class="plinks"><a href="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN15-FINAL-2TEAM" target="_blank" rel="noopener" class="ilink"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></div>
 <div class="badges"><span class="badge">2025.10 – 2025.11</span><span class="badge">5인 팀 · PM</span><span class="badge live">● 팀 프로젝트 2등</span></div>
 <div class="doc">
 <div class="doc-h">전체적인 아키텍처</div>
@@ -183,7 +189,8 @@ footer p{margin-top:12px; font-size:15px; line-height:1.7; color:var(--body)}
 <section class="proj" id="lecture-rag">
 <div class="num">Project 03 · Lecture-RAG</div>
 <h2>강의록 질의응답 시, LLM이 강의에 없는 함수·모듈을 만들어내던 환각 문제 해결</h2>
-<p class="ptitle">이원 청킹과 사후 검증으로 환각을 막은 강의록 질의응답 시스템, 6인 팀 PM · <a href="https://github.com/SKNETWORKS-FAMILY-AICAMP/skn15-4th-1team" target="_blank" rel="noopener">GitHub</a></p>
+<p class="ptitle">이원 청킹과 사후 검증으로 환각을 막은 강의록 질의응답 시스템, 6인 팀 PM</p>
+<div class="plinks"><a href="https://github.com/SKNETWORKS-FAMILY-AICAMP/skn15-4th-1team" target="_blank" rel="noopener" class="ilink"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></div>
 <div class="badges"><span class="badge">2025.08 – 2025.09</span><span class="badge">6인 팀 · PM</span></div>
 <div class="doc">
 <div class="doc-h">전체적인 아키텍처</div>
@@ -201,7 +208,8 @@ footer p{margin-top:12px; font-size:15px; line-height:1.7; color:var(--body)}
 <section class="proj" id="gorochi">
 <div class="num">Project 04 · Gorochi</div>
 <h2>주문 응대 시, 픽업 안내와 품절 처리를 매번 수동으로 반복하던 문제 해결</h2>
-<p class="ptitle">지인의 케이크샵을 위해 기획부터 배포까지 1인 개발한 온라인 주문 서비스 · <a href="https://gorochi.org" target="_blank" rel="noopener">gorochi.org</a></p>
+<p class="ptitle">지인의 케이크샵을 위해 기획부터 배포까지 1인 개발한 온라인 주문 서비스</p>
+<div class="plinks"><a href="https://gorochi.org" target="_blank" rel="noopener" class="ilink"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>gorochi.org</a></div>
 <div class="badges"><span class="badge">2026.07 – 현재</span><span class="badge">1인 개발</span><span class="badge">배포 완료 · 도입 준비 중</span></div>
 <div class="doc">
 <div class="doc-h">전체적인 아키텍처</div>
@@ -220,10 +228,10 @@ footer p{margin-top:12px; font-size:15px; line-height:1.7; color:var(--body)}
 <div class="eyebrow">Contact</div>
 <h2>감사합니다</h2>
 <p>문제 정의부터 설계·배포·운영까지, 끝을 내는 개발자 박진우입니다.</p>
-<button type="button" class="btn copy" data-copy="parkjinwoo4500@gmail.com">✉ 메일 주소 복사</button>
+<button type="button" class="btn copy" data-copy="parkjinwoo4500@gmail.com"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> 메일 주소 복사</button>
 <ul class="points">
-<li>✉ <span class="mono">parkjinwoo4500@gmail.com</span></li>
-<li>⌥ <a href="https://github.com/pjw876" target="_blank" rel="noopener">github.com/pjw876</a></li>
+<li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span class="mono">parkjinwoo4500@gmail.com</span></li>
+<li><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><a href="https://github.com/pjw876" target="_blank" rel="noopener">github.com/pjw876</a></li>
 </ul>
 </footer>
 
