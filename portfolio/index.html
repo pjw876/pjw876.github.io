@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>박진우 포트폴리오</title>
+<meta name="description" content="AI Engineer 박진우 포트폴리오">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f4f8; --surface:#ffffff; --surface-2:#f7f9fb;
+  --ink:#12161d; --body:#333a44; --muted:#5b6472; --faint:#8a93a0;
+  --hair:#e1e5eb;
+  --accent:#2f5375; --accent-ink:#1f3a52; --accent-soft:#e8eff5; --accent-soft-hair:#c9d9e6;
+  --good:#237a54; --good-soft:#e5f4ec;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c1015; --surface:#12171e; --surface-2:#171d25;
+    --ink:#e9edf2; --body:#c6ccd4; --muted:#98a2b0; --faint:#6d7684;
+    --hair:#242c35;
+    --accent:#7ba7cc; --accent-ink:#bcdaf0; --accent-soft:#152633; --accent-soft-hair:#254a63;
+    --good:#5ec994; --good-soft:#0f2a1f;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c1015; --surface:#12171e; --surface-2:#171d25;
+  --ink:#e9edf2; --body:#c6ccd4; --muted:#98a2b0; --faint:#6d7684;
+  --hair:#242c35;
+  --accent:#7ba7cc; --accent-ink:#bcdaf0; --accent-soft:#152633; --accent-soft-hair:#254a63;
+  --good:#5ec994; --good-soft:#0f2a1f;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--body);
+  font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  -webkit-font-smoothing:antialiased; word-break:keep-all;
+}
+h1,h2,h3,p,ul{margin:0}
+h1,h2,h3{color:var(--ink); text-wrap:balance}
+a{color:var(--accent)}
+.mono{font-family:'JetBrains Mono',monospace}
+.wrap{max-width:900px; margin:0 auto; padding:0 clamp(18px,4vw,40px)}
+
+/* top bar */
+.topbar{position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--hair)}
+.topbar .row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px clamp(18px,4vw,40px)}
+.topbar .brand{font-family:'JetBrains Mono','Noto Sans KR',monospace; font-weight:700; font-size:14px; color:var(--ink)}
+.topbar nav{display:flex; flex-wrap:wrap; gap:4px}
+.topbar nav a{font-size:13px; font-weight:600; color:var(--muted); text-decoration:none; padding:6px 10px; border-radius:999px}
+.topbar nav a:hover{background:var(--accent-soft); color:var(--accent-ink)}
+.topbar button.mail{font:inherit; font-size:13px; font-weight:700; padding:7px 14px; border-radius:999px; border:1px solid var(--accent); background:var(--accent); color:#fff; cursor:pointer; white-space:nowrap}
+.topbar button.mail:hover{filter:brightness(1.1)}
+@media (max-width:720px){ .topbar nav{display:none} }
+
+/* header */
+header.hero{padding:56px 0 40px}
+.eyebrow{font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin-bottom:12px}
+.h-title{font-size:clamp(36px,6vw,56px); font-weight:800; letter-spacing:-.03em; line-height:1.1}
+.h-role{font-size:clamp(16px,2vw,20px); font-weight:600; color:var(--accent); margin-top:8px}
+.h-lede{font-size:clamp(15px,1.6vw,17px); line-height:1.7; color:var(--body); margin-top:16px; max-width:640px}
+
+/* project section */
+.proj{padding:52px 0; border-top:1px solid var(--hair)}
+.proj .num{font-family:'JetBrains Mono',monospace; font-size:14px; font-weight:700; color:var(--accent)}
+.proj h2{font-size:clamp(24px,3.4vw,32px); font-weight:800; letter-spacing:-.02em; margin-top:6px}
+.ptitle{font-size:clamp(15.5px,1.6vw,18px); line-height:1.7; color:var(--body); margin-top:12px; max-width:720px}
+.ptitle b{color:var(--ink)}
+.badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+.badge{font-size:12.5px; font-weight:600; padding:4px 11px; border-radius:20px; background:var(--accent-soft); color:var(--accent-ink); border:1px solid var(--accent-soft-hair)}
+.badge.live{background:var(--good-soft); color:var(--good); border-color:transparent}
+
+.doc{margin-top:28px}
+.doc-h{display:flex; align-items:center; gap:9px; font-size:16px; font-weight:800; color:var(--ink); margin-top:26px}
+.doc-h:first-child{margin-top:0}
+.doc-h::before{content:''; width:7px; height:7px; border-radius:50%; background:var(--accent); flex:none}
+.doc ul{list-style:none; margin:12px 0 0; padding:0; display:grid; gap:9px}
+.doc ul li{position:relative; padding-left:18px; font-size:15px; line-height:1.7; color:var(--body)}
+.doc ul li::before{content:''; position:absolute; left:0; top:.66em; width:6px; height:6px; border-radius:50%; border:1.5px solid var(--faint)}
+.doc ul li b{color:var(--ink)}
+.doc ul ul{margin-top:8px}
+.doc ul ul li{padding-left:16px; font-size:.93em; color:var(--muted)}
+.doc ul ul li::before{content:'–'; border:0; width:auto; height:auto; top:0; font-weight:700; color:var(--faint); border-radius:0}
+.stack{margin-top:22px; font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--muted); padding-top:14px; border-top:1px dashed var(--hair)}
+
+.arch{margin-top:14px; background:var(--surface); border:1px solid var(--hair); border-radius:16px; padding:18px; overflow-x:auto}
+.arch-in{min-width:640px}
+.arch svg{width:100%; height:auto; display:block}
+.arch .ln{stroke:var(--faint); stroke-width:2; fill:none}
+.arch .ahp{fill:var(--faint)}
+.arch .nd rect{fill:var(--surface-2); stroke:var(--hair); stroke-width:1.5}
+.arch .nd.core rect{fill:var(--accent-soft); stroke:var(--accent-soft-hair)}
+.arch .nd.db rect{fill:var(--surface); stroke:var(--accent); stroke-dasharray:6 4}
+.arch .nt{font-size:18px; font-weight:700; fill:var(--ink); font-family:'Noto Sans KR',sans-serif}
+.arch .ns{font-size:13.5px; fill:var(--muted); font-family:'Noto Sans KR',sans-serif}
+.lane-h{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin:6px 0 4px; padding-top:4px}
+.lane-h b{font-size:15px; color:var(--ink)}
+.lane-h span{font-size:13px; color:var(--muted)}
+.lane-h:not(:first-child){margin-top:18px; padding-top:16px; border-top:1px dashed var(--hair)}
+
+/* footer / contact */
+footer{padding:56px 0 80px; border-top:1px solid var(--hair)}
+footer h2{font-size:clamp(24px,3.4vw,32px); font-weight:800}
+footer p{margin-top:12px; font-size:15px; line-height:1.7; color:var(--body)}
+.points{list-style:none; padding:0; margin-top:20px; display:grid; gap:10px}
+.points li{font-size:15px; line-height:1.6}
+.btn{display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:15px; text-decoration:none; padding:11px 20px; border-radius:999px; border:1px solid var(--accent); background:var(--accent); color:#fff; cursor:pointer; margin-top:18px}
+.btn:hover{filter:brightness(1.1)}
+
+.toast{position:fixed; left:50%; bottom:24px; transform:translate(-50%,10px); opacity:0; pointer-events:none; z-index:40;
+  background:var(--ink); color:var(--bg); font-size:14px; font-weight:600; padding:10px 18px; border-radius:999px; transition:opacity .2s, transform .2s}
+.toast.show{opacity:1; transform:translate(-50%,0)}
+
+@media print{
+  .topbar,.toast{display:none}
+  body{background:#fff}
+  .proj{break-inside:avoid-page; page-break-inside:avoid}
+  .arch{overflow:visible} .arch-in{min-width:0}
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="row">
+  <span class="brand">박진우 · 포트폴리오</span>
+  <nav>
+    <a href="#dostock">01 DoStock</a>
+    <a href="#triplan">02 Triplan</a>
+    <a href="#lecture-rag">03 Lecture-RAG</a>
+    <a href="#gorochi">04 Gorochi</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button type="button" class="mail copy" data-copy="parkjinwoo4500@gmail.com">✉ 메일 복사</button>
+</div></div>
+
+<div class="wrap">
+
+<header class="hero">
+<div class="eyebrow">AI Engineer</div>
+<h1 class="h-title">박진우 <span style="color:var(--accent)">포트폴리오</span></h1>
+<p class="h-lede"><b style="color:var(--ink)">그래프·벡터로 데이터를 구조화해 AI 서비스의 판단 근거를 설계하는</b> AI 엔지니어입니다. 2~3차 연쇄 탐색이 필요해 RDBMS 대신 Neo4j를 고른 것처럼, <b style="color:var(--ink)">문제에 맞는 기술을 근거를 갖고 선택</b>합니다. 각 프로젝트를 <b style="color:var(--ink)">아키텍처 → 문제 원인 → 해결 과정 → 결과</b> 순서로 정리했습니다.</p>
+</header>
+
+<section class="proj" id="dostock">
+<div class="num">Project 01 · DoStock</div>
+<h2>수혜주 리서치 시, 뉴스에 안 나오는 2~3단계 공급망 기업을 놓치는 문제 해결</h2>
+<p class="ptitle">DART 공급망 그래프 기반 수혜주 추천 서비스 — 파이프라인 설계 · 그래프 모델링 · MCP 에이전트 · 풀스택 담당</p>
+<div class="badges"><span class="badge">2025.12 – 현재</span><span class="badge">2인 팀</span><span class="badge live">● 직접 운영 중</span></div>
+<div class="doc">
+<div class="doc-h">전체적인 아키텍처</div>
+<div class="arch"><div class="arch-in"><div class="lane-h"><b>① 수집 파이프라인</b><span>Airflow 자동 실행 · 데이터를 쌓는 흐름</span></div><svg viewBox="0 0 1000 272" role="img" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahp"/></marker></defs><line x1="233" y1="66" x2="267" y2="66" class="ln" marker-end="url(#ah)"/><line x1="483" y1="66" x2="517" y2="66" class="ln" marker-end="url(#ah)"/><line x1="733" y1="66" x2="767" y2="66" class="ln" marker-end="url(#ah)"/><line x1="233" y1="206" x2="267" y2="206" class="ln" marker-end="url(#ah)"/><line x1="483" y1="206" x2="517" y2="206" class="ln" marker-end="url(#ah)"/><line x1="733" y1="206" x2="767" y2="206" class="ln" marker-end="url(#ah)"/><g class="nd n"><rect x="20" y="16" width="210" height="100" rx="14"/><text x="125.0" y="50" class="nt" text-anchor="middle">뉴스 수집</text><text x="125.0" y="76" class="ns" text-anchor="middle">경제 뉴스</text></g><g class="nd n"><rect x="270" y="16" width="210" height="100" rx="14"/><text x="375.0" y="50" class="nt" text-anchor="middle">임베딩</text><text x="375.0" y="76" class="ns" text-anchor="middle">bge-m3 (GPU)</text></g><g class="nd core"><rect x="520" y="16" width="210" height="100" rx="14"/><text x="625.0" y="50" class="nt" text-anchor="middle">이슈 클러스터</text><text x="625.0" y="76" class="ns" text-anchor="middle">일별 HDBSCAN</text><text x="625.0" y="96" class="ns" text-anchor="middle">+ Claude 라벨링</text></g><g class="nd db"><rect x="770" y="16" width="210" height="100" rx="14"/><text x="875.0" y="50" class="nt" text-anchor="middle">PostgreSQL</text><text x="875.0" y="76" class="ns" text-anchor="middle">뉴스·임베딩</text><text x="875.0" y="96" class="ns" text-anchor="middle">이슈·토픽 스트림</text></g><g class="nd n"><rect x="20" y="156" width="210" height="100" rx="14"/><text x="125.0" y="190" class="nt" text-anchor="middle">DART 사업보고서</text><text x="125.0" y="216" class="ns" text-anchor="middle">2,600+개사</text><text x="125.0" y="236" class="ns" text-anchor="middle">3개년 7,400건</text></g><g class="nd core"><rect x="270" y="156" width="210" height="100" rx="14"/><text x="375.0" y="190" class="nt" text-anchor="middle">섹션별 파싱</text><text x="375.0" y="216" class="ns" text-anchor="middle">목차 단위 분리</text><text x="375.0" y="236" class="ns" text-anchor="middle">15만+ 섹션</text></g><g class="nd core"><rect x="520" y="156" width="210" height="100" rx="14"/><text x="625.0" y="190" class="nt" text-anchor="middle">관계 추출·적재</text><text x="625.0" y="216" class="ns" text-anchor="middle">LLM 구조화</text><text x="625.0" y="236" class="ns" text-anchor="middle">1,900+개사에서 추출</text></g><g class="nd db"><rect x="770" y="156" width="210" height="100" rx="14"/><text x="875.0" y="190" class="nt" text-anchor="middle">Neo4j</text><text x="875.0" y="216" class="ns" text-anchor="middle">관계 6.9만+</text></g></svg><div class="lane-h"><b>② 추론 파이프라인</b><span>FastMCP 도구 + Claude Code · 쌓인 데이터로 판단하는 흐름</span></div><svg viewBox="0 0 1000 132" role="img" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahp"/></marker></defs><line x1="233" y1="66" x2="267" y2="66" class="ln" marker-end="url(#ah)"/><line x1="483" y1="66" x2="517" y2="66" class="ln" marker-end="url(#ah)"/><line x1="733" y1="66" x2="767" y2="66" class="ln" marker-end="url(#ah)"/><g class="nd n"><rect x="20" y="16" width="210" height="100" rx="14"/><text x="125.0" y="50" class="nt" text-anchor="middle">이슈 조회</text><text x="125.0" y="76" class="ns" text-anchor="middle">클러스터 조회 도구</text></g><g class="nd core"><rect x="270" y="16" width="210" height="100" rx="14"/><text x="375.0" y="50" class="nt" text-anchor="middle">공급망 탐색</text><text x="375.0" y="76" class="ns" text-anchor="middle">Neo4j Cypher</text><text x="375.0" y="96" class="ns" text-anchor="middle">[:SELLS_TO*1..3]</text></g><g class="nd n"><rect x="520" y="16" width="210" height="100" rx="14"/><text x="625.0" y="50" class="nt" text-anchor="middle">근거 조회</text><text x="625.0" y="76" class="ns" text-anchor="middle">공시 근거 확인</text></g><g class="nd core"><rect x="770" y="16" width="210" height="100" rx="14"/><text x="875.0" y="50" class="nt" text-anchor="middle">수혜주 판단</text><text x="875.0" y="76" class="ns" text-anchor="middle">Claude가 tier·</text><text x="875.0" y="96" class="ns" text-anchor="middle">confidence 판단</text></g></svg></div></div>
+<div class="doc-h">문제 원인</div>
+<ul><li>상한가 종목의 배경을 찾을 때 <b>뉴스에 직접 언급된 기업만</b> 보인다.</li><li>원자재·부품 업체처럼 2~3단계 떨어진 수혜주는 시장이 반응하기 전까지 드러나지 않는다.</li></ul>
+<div class="doc-h">해결 과정</div>
+<ul><li>DART 사업보고서에서 공급망 관계를 추출해 <b>Neo4j 그래프</b>로 구축, <span class="mono">[:SELLS_TO*1..3]</span> 가변길이 탐색으로 2~3차 연쇄를 추적 (RDBMS JOIN depth 회피)</li><li>뉴스는 bge-m3로 임베딩해 <b>매일 HDBSCAN</b>으로 이슈를 묶고 Claude가 라벨링, 이슈 centroid를 <b>코사인 유사도(0.80)로 이어 붙여</b> 며칠에 걸친 흐름(토픽 스트림)을 추적</li><li>탐색·근거·클러스터 조회를 <b>FastMCP 도구</b>로 노출, Claude가 <b>탐색 깊이와 tier·확신도를 직접 판단</b></li></ul>
+<div class="doc-h">결과</div>
+<ul><li>고유 상장기업 <b>3,038개</b>, 공급망 관계 <b>69,369건</b>의 그래프 구축 (지금도 증가)</li><li>매일 <b>Discord로 수혜주 리포트</b>를 받아 실제 투자 판단에 활용 중</li><li><b>라이브 서비스를 직접 운영</b> — Docker Compose 10서비스, GitHub Actions 배포 + 헬스체크 게이트</li><li>DB는 홈서버 + Tailscale 사설망으로 서버비 절감</li></ul>
+</div>
+<div class="stack">Next.js · FastAPI · LangGraph · FastMCP · Neo4j · pgvector · PostgreSQL · Airflow · HDBSCAN · Docker</div>
+</section>
+
+<section class="proj" id="triplan">
+<div class="num">Project 02 · Triplan</div>
+<h2>여행 일정 설계 시, 환율·날씨·경보 정보를 사용자가 직접 찾아 종합해야 했던 문제 해결</h2>
+<p class="ptitle">자연어 기반 그룹 여행 플래너 — PM · RAG 파이프라인 설계 · 데이터 파이프라인 · AWS 배포 담당 · <a href="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN15-FINAL-2TEAM" target="_blank" rel="noopener">GitHub</a></p>
+<div class="badges"><span class="badge">2025.10 – 2025.11</span><span class="badge">5인 팀 · PM</span><span class="badge live">● 팀 프로젝트 2등</span></div>
+<div class="doc">
+<div class="doc-h">전체적인 아키텍처</div>
+<div class="arch"><div class="arch-in"><svg viewBox="0 0 1000 272" role="img" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahp"/></marker></defs><line x1="233" y1="66" x2="267" y2="66" class="ln" marker-end="url(#ah)"/><line x1="483" y1="66" x2="517" y2="66" class="ln" marker-end="url(#ah)"/><line x1="733" y1="66" x2="767" y2="66" class="ln" marker-end="url(#ah)"/><line x1="233" y1="206" x2="267" y2="206" class="ln" marker-end="url(#ah)"/><line x1="483" y1="206" x2="517" y2="206" class="ln" marker-end="url(#ah)"/><line x1="625" y1="153" x2="625" y2="119" class="ln" marker-end="url(#ah)"/><line x1="780" y1="153" x2="720" y2="119" class="ln" marker-end="url(#ah)"/><g class="nd n"><rect x="20" y="16" width="210" height="100" rx="14"/><text x="125.0" y="50" class="nt" text-anchor="middle">자연어 입력</text><text x="125.0" y="76" class="ns" text-anchor="middle">여행 의도</text></g><g class="nd core"><rect x="270" y="16" width="210" height="100" rx="14"/><text x="375.0" y="50" class="nt" text-anchor="middle">보안 필터</text><text x="375.0" y="76" class="ns" text-anchor="middle">인젝션 패턴 차단</text></g><g class="nd core"><rect x="520" y="16" width="210" height="100" rx="14"/><text x="625.0" y="50" class="nt" text-anchor="middle">Tool-calling Agent</text><text x="625.0" y="76" class="ns" text-anchor="middle">도구 15개 중 선택</text><text x="625.0" y="96" class="ns" text-anchor="middle">실행</text></g><g class="nd n"><rect x="770" y="16" width="210" height="100" rx="14"/><text x="875.0" y="50" class="nt" text-anchor="middle">일정 생성</text><text x="875.0" y="76" class="ns" text-anchor="middle">응답 후 프롬프트</text><text x="875.0" y="96" class="ns" text-anchor="middle">유출 재검증</text></g><g class="nd n"><rect x="20" y="156" width="210" height="100" rx="14"/><text x="125.0" y="190" class="nt" text-anchor="middle">Airflow DAGs</text><text x="125.0" y="216" class="ns" text-anchor="middle">환율·날씨·경보</text><text x="125.0" y="236" class="ns" text-anchor="middle">유튜브 수집</text></g><g class="nd db"><rect x="270" y="156" width="210" height="100" rx="14"/><text x="375.0" y="190" class="nt" text-anchor="middle">PostgreSQL</text><text x="375.0" y="216" class="ns" text-anchor="middle">수집 데이터 적재</text></g><g class="nd db"><rect x="520" y="156" width="210" height="100" rx="14"/><text x="625.0" y="190" class="nt" text-anchor="middle">에이전트 도구</text><text x="625.0" y="216" class="ns" text-anchor="middle">수집 데이터 조회</text></g><g class="nd db"><rect x="770" y="156" width="210" height="100" rx="14"/><text x="875.0" y="190" class="nt" text-anchor="middle">pgvector RAG</text><text x="875.0" y="216" class="ns" text-anchor="middle">YouTube 영상 403개</text><text x="875.0" y="236" class="ns" text-anchor="middle">3단계 폴백</text></g></svg></div></div>
+<div class="doc-h">문제 원인</div>
+<ul><li>여행 계획은 환율·날씨·여행경보·후보지 정보를 <b>사용자가 따로 찾아 종합</b>해야 한다.</li><li>LLM 단독 답변은 최신 정보와 근거가 약하다.</li></ul>
+<div class="doc-h">해결 과정</div>
+<ul><li>환율·날씨·경보·유튜브를 <b>Airflow DAG 4종</b>으로 미리 수집 → PostgreSQL에 적재해 에이전트가 도구로 조회</li><li>여행 영상 403개를 pgvector에 임베딩해 RAG 검색, 결과가 없으면 <b>YouTube → 네이버 블로그 → GPT 생성</b> 순으로 폴백</li><li>OpenAI function calling <b>tool-calling agent</b>가 일정 추가·수정·이동·삭제·장소 추천 등 <b>도구 15개</b>를 선택 실행</li><li>입력은 프롬프트 인젝션 패턴 필터, 출력은 시스템 프롬프트 유출을 재검증</li></ul>
+<div class="doc-h">결과</div>
+<ul><li><b>팀 프로젝트 2등</b> (SK네트웍스 AI 캠프 15기 최종 프로젝트)</li><li>5인 팀 <b>PM</b>으로 RAG 파이프라인 설계·데이터 파이프라인·AWS 배포 담당</li><li><b>AWS 배포 후 실시간 시연</b> — 4종 데이터 파이프라인과 영상 403개 임베딩 적재까지 구축</li></ul>
+</div>
+<div class="stack">Next.js · Django · LangChain · OpenAI · pgvector · Redis · Airflow · AWS EC2</div>
+</section>
+
+<section class="proj" id="lecture-rag">
+<div class="num">Project 03 · Lecture-RAG</div>
+<h2>강의록 질의응답 시, LLM이 강의에 없는 함수·모듈을 만들어내던 환각 문제 해결</h2>
+<p class="ptitle">이원 청킹과 사후 검증으로 환각을 막은 강의록 질의응답 시스템, 6인 팀 PM · <a href="https://github.com/SKNETWORKS-FAMILY-AICAMP/skn15-4th-1team" target="_blank" rel="noopener">GitHub</a></p>
+<div class="badges"><span class="badge">2025.08 – 2025.09</span><span class="badge">6인 팀 · PM</span></div>
+<div class="doc">
+<div class="doc-h">전체적인 아키텍처</div>
+<div class="arch"><div class="arch-in"><svg viewBox="0 0 1000 272" role="img" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahp"/></marker></defs><line x1="233" y1="66" x2="267" y2="66" class="ln" marker-end="url(#ah)"/><line x1="483" y1="66" x2="517" y2="66" class="ln" marker-end="url(#ah)"/><line x1="733" y1="66" x2="767" y2="66" class="ln" marker-end="url(#ah)"/><line x1="233" y1="206" x2="267" y2="206" class="ln" marker-end="url(#ah)"/><line x1="767" y1="96" x2="483" y2="176" class="ln" marker-end="url(#ah)"/><line x1="483" y1="206" x2="517" y2="206" class="ln" marker-end="url(#ah)"/><line x1="733" y1="206" x2="767" y2="206" class="ln" marker-end="url(#ah)"/><g class="nd n"><rect x="20" y="16" width="210" height="100" rx="14"/><text x="125.0" y="50" class="nt" text-anchor="middle">강의록</text><text x="125.0" y="76" class="ns" text-anchor="middle">텍스트 · 코드</text></g><g class="nd core"><rect x="270" y="16" width="210" height="100" rx="14"/><text x="375.0" y="50" class="nt" text-anchor="middle">이원 청킹</text><text x="375.0" y="76" class="ns" text-anchor="middle">헤더 분할</text><text x="375.0" y="96" class="ns" text-anchor="middle">코드 블록 독립</text></g><g class="nd n"><rect x="520" y="16" width="210" height="100" rx="14"/><text x="625.0" y="50" class="nt" text-anchor="middle">로컬 임베딩</text><text x="625.0" y="76" class="ns" text-anchor="middle">all-MiniLM-L6-v2</text></g><g class="nd db"><rect x="770" y="16" width="210" height="100" rx="14"/><text x="875.0" y="50" class="nt" text-anchor="middle">FAISS 인덱스</text><text x="875.0" y="76" class="ns" text-anchor="middle">검색 가능 상태</text></g><g class="nd n"><rect x="20" y="156" width="210" height="100" rx="14"/><text x="125.0" y="212" class="nt" text-anchor="middle">질문</text></g><g class="nd n"><rect x="270" y="156" width="210" height="100" rx="14"/><text x="375.0" y="190" class="nt" text-anchor="middle">검색 + 답변 생성</text><text x="375.0" y="216" class="ns" text-anchor="middle">gpt-4o-mini</text></g><g class="nd core"><rect x="520" y="156" width="210" height="100" rx="14"/><text x="625.0" y="190" class="nt" text-anchor="middle">토큰 화이트리스트 검증</text><text x="625.0" y="216" class="ns" text-anchor="middle">위반 시 1회 재시도</text></g><g class="nd n"><rect x="770" y="156" width="210" height="100" rx="14"/><text x="875.0" y="190" class="nt" text-anchor="middle">답변</text><text x="875.0" y="216" class="ns" text-anchor="middle">강의 범위 내 함수만</text></g></svg></div></div>
+<div class="doc-h">문제 원인</div>
+<ul><li>ChatGPT에 강의록 관련 질문을 하면 <b>강의에 없는 함수·모듈</b>로 예제를 만들어낸다.</li><li>프롬프트로 "강의 내용만 써라"고 지시해도 환각이 잡히지 않았다.</li></ul>
+<div class="doc-h">해결 과정</div>
+<ul><li>헤더 기준 분할 + <span class="mono">detect_code_blocks()</span>로 <b>코드 블록을 독립 청크</b>로 보존</li><li>강의록에 실제 존재하는 토큰을 <span class="mono">extract_allowed_tokens()</span>로 <b>화이트리스트</b>화, 답변 생성 후 사후 검증</li><li>위반 토큰을 지목해 <b>1회 재시도</b>, HuggingFace 로컬 임베딩(<span class="mono">all-MiniLM-L6-v2</span>)으로 비용 제거</li></ul>
+<div class="doc-h">결과</div>
+<ul><li><b>프롬프트만으로 안 잡히던 환각을 사후 검증으로 차단</b></li><li>강의 외 함수명 차단 동작 확인, 로컬 임베딩으로 <b>임베딩 비용 0원</b></li><li>Streamlit 프로토타입 → Django REST + PostgreSQL + Nginx + Docker Compose로 <b>AWS 배포</b>까지 확장, 팀 <b>PM</b> 담당</li></ul>
+</div>
+<div class="stack">Streamlit · Django · FAISS · HuggingFace · LangChain · PostgreSQL · Nginx · Docker · AWS EC2</div>
+</section>
+
+<section class="proj" id="gorochi">
+<div class="num">Project 04 · Gorochi</div>
+<h2>주문 응대 시, 픽업 안내와 품절 처리를 매번 수동으로 반복하던 문제 해결</h2>
+<p class="ptitle">지인의 케이크샵을 위해 기획부터 배포까지 1인 개발한 온라인 주문 서비스 · <a href="https://gorochi.org" target="_blank" rel="noopener">gorochi.org</a></p>
+<div class="badges"><span class="badge">2026.07 – 현재</span><span class="badge">1인 개발</span><span class="badge">배포 완료 · 도입 준비 중</span></div>
+<div class="doc">
+<div class="doc-h">전체적인 아키텍처</div>
+<div class="arch"><div class="arch-in"><svg viewBox="0 0 750 272" role="img" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahp"/></marker></defs><line x1="233" y1="66" x2="267" y2="66" class="ln" marker-end="url(#ah)"/><line x1="483" y1="66" x2="517" y2="66" class="ln" marker-end="url(#ah)"/><line x1="375" y1="119" x2="375" y2="153" class="ln" marker-end="url(#ah)"/><line x1="267" y1="206" x2="233" y2="206" class="ln" marker-end="url(#ah)"/><line x1="625" y1="153" x2="625" y2="119" class="ln" marker-end="url(#ah)"/><g class="nd n"><rect x="20" y="16" width="210" height="100" rx="14"/><text x="125.0" y="50" class="nt" text-anchor="middle">고객 주문</text><text x="125.0" y="76" class="ns" text-anchor="middle">Next.js</text><text x="125.0" y="96" class="ns" text-anchor="middle">카카오·전화 인증</text></g><g class="nd core"><rect x="270" y="16" width="210" height="100" rx="14"/><text x="375.0" y="50" class="nt" text-anchor="middle">API 서버</text><text x="375.0" y="76" class="ns" text-anchor="middle">FastAPI · JWT</text></g><g class="nd db"><rect x="520" y="16" width="210" height="100" rx="14"/><text x="625.0" y="50" class="nt" text-anchor="middle">PostgreSQL</text><text x="625.0" y="76" class="ns" text-anchor="middle">주문·슬롯·품절</text></g><g class="nd n"><rect x="20" y="156" width="210" height="100" rx="14"/><text x="125.0" y="190" class="nt" text-anchor="middle">관리자 화면</text><text x="125.0" y="216" class="ns" text-anchor="middle">실시간 주문 알림</text></g><g class="nd core"><rect x="270" y="156" width="210" height="100" rx="14"/><text x="375.0" y="190" class="nt" text-anchor="middle">SSE 스트림</text><text x="375.0" y="216" class="ns" text-anchor="middle">30초 일회용 토큰 인증</text></g><g class="nd core"><rect x="520" y="156" width="210" height="100" rx="14"/><text x="625.0" y="190" class="nt" text-anchor="middle">AsyncIO 크론</text><text x="625.0" y="216" class="ns" text-anchor="middle">매일 자정</text><text x="625.0" y="236" class="ns" text-anchor="middle">품절 초기화</text></g></svg></div></div>
+<div class="doc-h">문제 원인</div>
+<ul><li>SNS DM 주문마다 픽업 시간·메뉴·결제 안내를 <b>수동으로 반복</b>해야 했다.</li><li>품절 처리도 사람이 매일 직접 초기화해야 했다.</li></ul>
+<div class="doc-h">해결 과정</div>
+<ul><li><b>슬롯 기반 주문</b>으로 안내를 주문 화면에서 처리하고, 주문이 들어오면 관리자에게 <b>SSE로 실시간 알림</b></li><li>관리자가 서버로 스트림을 보낼 일이 없어 <b>WebSocket 대신 SSE</b>를 선택해 구현 단순화, 연결 인증은 30초 일회용 토큰</li><li><b>AsyncIO 크론 태스크</b>가 매일 자정 품절 상태를 자동 초기화</li><li><b>PG 결제 연동</b></li></ul>
+<div class="doc-h">결과</div>
+<ul><li><b>기획·개발·배포 1인 완료</b> — gorochi.org 배포, 실매장 도입 준비 중</li><li>품절 초기화 수작업 제거, 카카오 로그인 + 전화 인증으로 본인 확인</li></ul>
+</div>
+<div class="stack">Next.js · FastAPI · PostgreSQL · SSE · AsyncIO · Docker</div>
+</section>
+
+<footer id="contact">
+<div class="eyebrow">Contact</div>
+<h2>감사합니다</h2>
+<p>문제 정의부터 설계·배포·운영까지, 끝을 내는 개발자 박진우입니다.</p>
+<button type="button" class="btn copy" data-copy="parkjinwoo4500@gmail.com">✉ 메일 주소 복사</button>
+<ul class="points">
+<li>✉ <span class="mono">parkjinwoo4500@gmail.com</span></li>
+<li>⌥ <a href="https://github.com/pjw876" target="_blank" rel="noopener">github.com/pjw876</a></li>
+</ul>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var toast = document.createElement('div');
+  toast.className = 'toast'; toast.setAttribute('role','status');
+  document.body.appendChild(toast);
+  var tt;
+  function showToast(msg){
+    toast.textContent = msg; toast.classList.add('show');
+    clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('show'); }, 1800);
+  }
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false;
+    try{ ok = document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta);
+    return ok;
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function(b){
+    b.addEventListener('click', function(){
+      var text = b.getAttribute('data-copy');
+      var done = function(ok){ showToast(ok ? '메일 주소가 복사되었습니다 ✓' : '복사 실패 — ' + text); };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(fallbackCopy(text)); });
+      } else { done(fallbackCopy(text)); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
